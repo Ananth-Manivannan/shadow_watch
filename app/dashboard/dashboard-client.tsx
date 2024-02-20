@@ -21,7 +21,7 @@ export default function DashboardClient({ docsList }: { docsList: any }) {
 
   const options = {
     maxFileCount: 1,
-    mimeTypes: ['application/pdf'],
+    mimeTypes: ['video/mp4'],
     editor: { images: { crop: false } },
     styles: {
       colors: {
@@ -65,15 +65,16 @@ export default function DashboardClient({ docsList }: { docsList: any }) {
         fileName,
       }),
     });
-
+// Dont wait for response from server to process the pdf
     let data = await res.json();
     router.push(`/document/${data.id}`);
+    // router.push('/document/success');
   }
 
   return (
     <div className="mx-auto flex flex-col gap-4 container mt-10">
       <h1 className="text-4xl leading-[1.1] tracking-tighter font-medium text-center">
-        Chat With Your PDFs
+        Generated Runbooks 
       </h1>
       {docsList.length > 0 && (
         <div className="flex flex-col gap-4 mx-10 my-5">
@@ -98,11 +99,11 @@ export default function DashboardClient({ docsList }: { docsList: any }) {
       )}
       {docsList.length > 0 ? (
         <h2 className="text-3xl leading-[1.1] tracking-tighter font-medium text-center">
-          Or upload a new PDF
+          Or upload a new video
         </h2>
       ) : (
         <h2 className="text-3xl leading-[1.1] tracking-tighter font-medium text-center mt-5">
-          No PDFs found. Upload a new PDF below!
+          No runbooks found. Upload a new screen recording below!
         </h2>
       )}
       <div className="mx-auto min-w-[450px] flex justify-center">
@@ -131,7 +132,7 @@ export default function DashboardClient({ docsList }: { docsList: any }) {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               ></path>
             </svg>
-            Ingesting your PDF...
+            Upload in progress...
           </button>
         ) : (
           <UploadDropZone />

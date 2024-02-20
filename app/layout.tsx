@@ -9,11 +9,11 @@ const anek = Anek_Bangla({
   display: 'swap',
 });
 
-let title = 'PDF to Chat';
-let description = 'Chat with your PDFs in seconds.';
+let title = 'OpsBuddy';
+let description = 'Generate runbooks in seconds.';
 let ogimage = 'https://www.pdftochat.com/og-image.png';
-let url = 'https://www.pdftochat.com';
-let sitename = 'pdftochat.com';
+let url = 'https://shadow-watch.vercel.app/';
+let sitename = 'ShadowWatch.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),

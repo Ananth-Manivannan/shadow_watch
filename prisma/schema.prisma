@@ -13,5 +13,6 @@ model Document {
     userId    String
     fileUrl   String
     fileName  String
+    content   String?
     createdAt DateTime @default(now()) @map(name: "created_at")
 }

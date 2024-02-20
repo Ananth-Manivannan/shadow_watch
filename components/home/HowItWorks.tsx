@@ -4,17 +4,17 @@ import Link from 'next/link';
 const data = [
   {
     title: 'Sign up',
-    description: 'Start by signing up for a free PDFtoChat account',
+    description: 'Start by signing up for a free OpsBuddy account',
     image: '/pen.png',
   },
   {
-    title: 'Upload a PDF',
-    description: 'After login, upload your PDF and let the AI tool analyze it',
+    title: 'Upload a screen recording',
+    description: 'After login, upload your recording and let the AI tool analyze it',
     image: '/upload.png',
   },
   {
-    title: 'Begin Chatting',
-    description: 'Simply start asking the AI any question about the PDF!',
+    title: 'Generated runbook with chat',
+    description: 'Ask the AI any Ops question and it will use the knowledge base to answer!',
     image: '/chat.png',
   },
 ];

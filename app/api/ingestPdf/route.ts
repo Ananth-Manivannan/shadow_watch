@@ -47,43 +47,46 @@ export async function POST(request: Request) {
   });
 
   const namespace = doc.id;
-
-  try {
-    /* load from remote pdf URL */
-    const response = await fetch(fileUrl);
-    const buffer = await response.blob();
-    const loader = new PDFLoader(buffer);
-    const rawDocs = await loader.load();
-
-    /* Split text into chunks */
-    const textSplitter = new RecursiveCharacterTextSplitter({
-      chunkSize: 1000,
-      chunkOverlap: 200,
-    });
-    const docs = await textSplitter.splitDocuments(rawDocs);
-
-    console.log('creating vector store...');
-
-    /* create and store the embeddings in the vectorStore */
-    const embeddings = new TogetherAIEmbeddings({
-      apiKey: process.env.TOGETHER_AI_API_KEY,
-      modelName: 'togethercomputer/m2-bert-80M-8k-retrieval',
-    });
-    const index = pinecone.Index(PINECONE_INDEX_NAME);
-
-    // embed the PDF documents
-    await PineconeStore.fromDocuments(docs, embeddings, {
-      pineconeIndex: index,
-      namespace,
-      textKey: 'text',
-    });
-  } catch (error) {
-    console.log('error', error);
-    return NextResponse.json({ error: 'Failed to ingest your data' });
+  if (fileUrl.ednsWith('.pdf')) {
+    try {
+      /* load from remote pdf URL */
+      const response = await fetch(fileUrl);
+      const buffer = await response.blob();
+      const loader = new PDFLoader(buffer);
+      const rawDocs = await loader.load();
+  
+      /* Split text into chunks */
+      const textSplitter = new RecursiveCharacterTextSplitter({
+        chunkSize: 1000,
+        chunkOverlap: 200,
+      });
+      const docs = await textSplitter.splitDocuments(rawDocs);
+  
+      console.log('creating vector store...');
+  
+      /* create and store the embeddings in the vectorStore */
+      const embeddings = new TogetherAIEmbeddings({
+        apiKey: process.env.TOGETHER_AI_API_KEY,
+        modelName: 'togethercomputer/m2-bert-80M-8k-retrieval',
+      });
+      const index = pinecone.Index(PINECONE_INDEX_NAME);
+  
+      // // embed the PDF documents
+      await PineconeStore.fromDocuments(docs, embeddings, {
+        pineconeIndex: index,
+        namespace,
+        textKey: 'text',
+      });
+    } catch (error) {
+      console.log('error', error);
+      return NextResponse.json({ error: 'Failed to ingest your data' });
+    }
   }
+//TODO: commenting out processing/ingestion code for now
+
 
   return NextResponse.json({
-    text: 'Successfully embedded pdf',
+    text: 'Upload sucessful! Your runbook generated within 24 hours.',
     id: namespace,
   });
 }

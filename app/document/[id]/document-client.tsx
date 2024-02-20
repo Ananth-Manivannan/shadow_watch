@@ -24,7 +24,7 @@ export default function DocumentClient({
   currentDoc: Document;
   userImage?: string;
 }) {
-  const toolbarPluginInstance = toolbarPlugin();
+const toolbarPluginInstance = toolbarPlugin();
   const pageNavigationPluginInstance = pageNavigationPlugin();
   const { renderDefaultToolbar, Toolbar } = toolbarPluginInstance;
 
@@ -34,6 +34,22 @@ export default function DocumentClient({
     SwitchTheme: () => <></>,
     Open: () => <></>,
   });
+
+  if (!currentDoc.fileUrl.endsWith('.pdf')) {
+    return (
+      <div className="flex flex-col items-center justify-center h-full space-y-4">
+        <img src="/Resolvd_icon.svg" alt="Processing document" className="w-32 h-32" />
+        <h2 className="text-lg font-semibold">Your runbook is being processed</h2>
+        <p className="text-gray-500">Please check back within 24 hours</p>
+        <button
+          onClick={() => window.location.href = '/dashboard'}
+          className="mt-4 px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
+        >
+          Back to Dashboard
+        </button>
+      </div>
+    );
+  }
 
   const chatId = currentDoc.id;
   const pdfUrl = currentDoc.fileUrl;
@@ -111,8 +127,8 @@ export default function DocumentClient({
               fileUrl={pdfUrl as string}
               plugins={[toolbarPluginInstance, pageNavigationPluginInstance]}
             />
-          </div>
-        </Worker>
+        </div>
+</Worker>
         {/* Right hand side */}
         <div className="flex flex-col w-full justify-between align-center h-[90vh] no-scrollbar">
           <div
@@ -166,7 +182,7 @@ export default function DocumentClient({
                       {(isLastMessage || previousMessages) && sources && (
                         <div className="flex space-x-4 ml-14 mt-3">
                           {sources
-                            .filter((source: any, index: number, self: any) => {
+.filter((source: any, index: number, self: any) => {
                               const pageNumber =
                                 source.metadata['loc.pageNumber'];
                               // Check if the current pageNumber is the first occurrence in the array
@@ -187,8 +203,8 @@ export default function DocumentClient({
                                   )
                                 }
                               >
-                                p. {source.metadata['loc.pageNumber']}
-                              </button>
+                                  p. {source.metadata['loc.pageNumber']}
+                                </button>
                             ))}
                         </div>
                       )}

@@ -1,10 +1,10 @@
-<a href="https://www.pdftochat.com/">
-  <img alt="PDFToChat – Chat with your PDFs in seconds." src="./public/og-image.png">
-  <h1 align="center">PDFToChat</h1>
+<a href="https://shadow-watch.vercel.app//">
+  <img alt="OpsBuddy – Generate runbooks in seconds." src="./public/og-image.png">
+  <h1 align="center">OpsBuddy</h1>
 </a>
 
 <p align="center">
-  Chat with your PDFs in seconds. Powered by Together AI and Pinecone.
+  Generate runbooks in seconds. Powered by Together AI and Pinecone.
 </p>
 
 <p align="center">

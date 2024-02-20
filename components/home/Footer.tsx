@@ -44,7 +44,7 @@ const Footer = () => {
         <div className="flex items-center gap-[22px] sm:gap-[39px]">
           <div className="flex space-x-4 pb-4 sm:pb-0">
             <Link
-              href="https://twitter.com/nutlope"
+              href="https://twitter.com/builder_3_"
               className="group"
               aria-label="Twitter"
             >
@@ -56,7 +56,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href="https://github.com/nutlope/pdftochat"
+              href="https://github.com/Ananth-Manivannan/shadow_watch"
               className="group"
               aria-label="GitHub"
             >

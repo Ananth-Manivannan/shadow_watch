@@ -13,7 +13,7 @@ const ProudlyOpenSource = () => {
       <div className="flex justify-center">
         <a
           className="shadow-[0px_0.5px_4px_0px_rgba(0,0,0,0.15)_inset] drop_shadow rounded-full flex items-center gap-[3px] sm:gap-2 py-0.5 sm:py-3 px-6"
-          href="https://github.com/Nutlope/pdftochat"
+          href="https://github.com/Ananth-Manivannan/shadow_watch"
         >
           <Image
             src="/github.png"
