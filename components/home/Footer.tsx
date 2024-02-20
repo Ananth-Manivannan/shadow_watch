@@ -56,7 +56,7 @@ const Footer = () => {
               </svg>
             </Link>
             <Link
-              href="https://github.com/Ananth-Manivannan/shadow_watch"
+              href="https://github.com/Ananth-Manivannan"
               className="group"
               aria-label="GitHub"
             >

@@ -86,7 +86,7 @@ export async function POST(request: Request) {
 
 
   return NextResponse.json({
-    text: 'Upload sucessful! Your runbook generated within 24 hours.',
+    text: 'Upload sucessful! Your runbook generated within a few hours!',
     id: namespace,
   });
 }
