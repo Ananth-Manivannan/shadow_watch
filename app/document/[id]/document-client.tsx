@@ -41,7 +41,7 @@ const toolbarPluginInstance = toolbarPlugin();
         <img src="/Resolvd_icon.svg" alt="Processing document" className="w-32 h-32" />
         <h2 className="text-lg font-semibold">Your runbook is being processed</h2>
         <p className="text-gray-500">Please check back within 24 hours</p>
-        <button
+                <button
           onClick={() => window.location.href = '/dashboard'}
           className="mt-4 px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
         >

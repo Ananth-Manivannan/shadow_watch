@@ -47,7 +47,7 @@ export async function POST(request: Request) {
   });
 
   const namespace = doc.id;
-  if (fileUrl.ednsWith('.pdf')) {
+  if (doc.fileUrl.endsWith('.pdf')) {
     try {
       /* load from remote pdf URL */
       const response = await fetch(fileUrl);
