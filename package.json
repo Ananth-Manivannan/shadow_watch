@@ -17,6 +17,7 @@
     "@langchain/pinecone": "^0.0.1",
     "@pinecone-database/pinecone": "^2.0.1",
     "@prisma/client": "^5.9.1",
+    "@prisma/extension-pulse": "^0.2.2",
     "@radix-ui/react-accordion": "^1.1.1",
     "@react-pdf-viewer/core": "3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",

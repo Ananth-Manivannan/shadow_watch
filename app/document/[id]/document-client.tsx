@@ -130,7 +130,7 @@ const toolbarPluginInstance = toolbarPlugin();
         </div>
 </Worker>
         {/* Right hand side */}
-        <div className="flex flex-col w-full justify-between align-center h-[90vh] no-scrollbar">
+       {/* <div className="flex flex-col w-full justify-between align-center h-[90vh] no-scrollbar">
           <div
             className={`w-full min-h-min bg-white border flex justify-center items-center no-scrollbar sm:h-[85vh] h-[80vh]
             `}
@@ -177,9 +177,9 @@ const toolbarPluginInstance = toolbarPlugin();
                         <ReactMarkdown linkTarget="_blank" className="prose">
                           {message.content}
                         </ReactMarkdown>
-                      </div>
+                      </div> */}
                       {/* Display the sources */}
-                      {(isLastMessage || previousMessages) && sources && (
+                     {/* {(isLastMessage || previousMessages) && sources && (
                         <div className="flex space-x-4 ml-14 mt-3">
                           {sources
 .filter((source: any, index: number, self: any) => {
@@ -232,7 +232,7 @@ const toolbarPluginInstance = toolbarPlugin();
                 id="userInput"
                 name="userInput"
                 placeholder={
-                  isLoading ? 'Waiting for response...' : 'Ask me anything...'
+                  isLoading ? 'Waiting for response...' : 'Paste your error/alert here and I will help you resolve it...'
                 }
               />
               <button
@@ -262,6 +262,7 @@ const toolbarPluginInstance = toolbarPlugin();
             </div>
           )}
         </div>
+         */}
       </div>
     </div>
   );
